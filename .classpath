@@ -18,6 +18,7 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="/Applications/payara5/glassfish/modules/org.eclipse.persistence.jpa.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="https://jakarta.ee/specifications/platform/8/apidocs"/>
@@ -28,6 +29,8 @@
 			<attribute name="javadoc_location" value="https://jakarta.ee/specifications/platform/8/apidocs"/>
 		</attributes>
 	</classpathentry>
+=======
+>>>>>>> f7aa7b33a12dbcd6da9a0a19f22809af4c906417
 	<classpathentry kind="lib" path="/Applications/payara5/glassfish/modules/jakarta.persistence.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="https://jakarta.ee/specifications/platform/8/apidocs"/>

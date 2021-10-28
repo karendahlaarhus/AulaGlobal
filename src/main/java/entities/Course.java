@@ -35,8 +35,6 @@ public class Course implements Serializable {
 
 	private String name;
 
-
-
 	private int section;
 
 	//bi-directional many-to-many association to Student
@@ -70,7 +68,6 @@ public class Course implements Serializable {
 		this.description = description;
 	}
 
-	
 	public String getName() {
 		return this.name;
 	}
