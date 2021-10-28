@@ -1,40 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src/main/java"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11">
-		<attributes>
-			<attribute name="module" value="true"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="/Applications/payara5/mq/lib/javax.servlet-api.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/Applications/payara5/mq/lib/javax.transaction-api.jar">
+	<classpathentry kind="lib" path="/Applications/payara5/glassfish/domains/domain1/lib/mysql-connector-java-8.0.26.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-<<<<<<< HEAD
-	<classpathentry kind="lib" path="/Applications/payara5/glassfish/modules/org.eclipse.persistence.jpa.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="https://jakarta.ee/specifications/platform/8/apidocs"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/Applications/payara5/glassfish/modules/webservices-osgi.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="https://jakarta.ee/specifications/platform/8/apidocs"/>
-		</attributes>
-	</classpathentry>
-=======
->>>>>>> f7aa7b33a12dbcd6da9a0a19f22809af4c906417
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11"/>
 	<classpathentry kind="lib" path="/Applications/payara5/glassfish/modules/jakarta.persistence.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="https://jakarta.ee/specifications/platform/8/apidocs"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="output" path="build/classes"/>
+	<classpathentry kind="lib" path="/Applications/payara5/glassfish/modules/jakarta.transaction-api.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="https://jakarta.ee/specifications/platform/8/apidocs"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
 </classpath>

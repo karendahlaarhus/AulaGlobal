@@ -13,27 +13,24 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.transaction.UserTransaction;
 
 import entities.Course;
 
 /**
  * Servlet implementation class AMServlet
  */
-@WebServlet("/AMServlet")
+@WebServlet({"/AMServlet", "*.html"})
 public class AMServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	@PersistenceContext(unitName = "AulaGlobal")
+	@PersistenceContext(unitName = "AulaMaster")
 	private EntityManager em;
-
-	private UserTransaction ut;
     /**
      * Default constructor. 
      */
-    public AMServlet() {
+    //public AMServlet() {
         // TODO Auto-generated constructor stub
-    }
+    //}
    
     public void init() {
     	ServletContext context = getServletContext();
@@ -51,7 +48,7 @@ public class AMServlet extends HttpServlet {
 		out.println("<HEAD><TITLE>AMServlet</TITLE></HEAD>");
 		out.println("<BODY bgcolor=\"#ffff66\">");
 		out.println("<H1><FONT color=\"#666600\">Database: Users</FONT></H1></BR>");
-		out.println("<FORM METHOD=\"POST\" ACTION=\"" + "\">"); 
+		
 		
 		
 
@@ -65,10 +62,10 @@ public class AMServlet extends HttpServlet {
 		
 		
 		
-		out.println("</FORM>");
 		out.println("</BODY></HTML>");
 
 		out.close();
+		
 	}
 
 	/**
