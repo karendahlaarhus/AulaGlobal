@@ -11,7 +11,27 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/Applications/payara5/mq/lib/javax.transaction-api.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="/Applications/payara5/glassfish/modules/org.eclipse.persistence.jpa.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="https://jakarta.ee/specifications/platform/8/apidocs"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Applications/payara5/glassfish/modules/webservices-osgi.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="https://jakarta.ee/specifications/platform/8/apidocs"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Applications/payara5/glassfish/modules/jakarta.persistence.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="https://jakarta.ee/specifications/platform/8/apidocs"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

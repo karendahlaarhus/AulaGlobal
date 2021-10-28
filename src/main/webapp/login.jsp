@@ -6,17 +6,19 @@
 </head>
 <body>
 
-    <form METHOD="POST" ACTION="login.html">
-     <hr>
-     <h2>Login</h2><br>
-      <p> Student number<INPUT NAME="Name" VALUE=""></p>
-      <p>Password;<INPUT NAME="Email" VALUE="" ></p>
-      <p> <input type="checkbox" name="Forward" value="Y"> First time logging in?</p>
-      <p> <INPUT TYPE=Submit Value = "Send">
-     
+    <%@ include file="index.jsp" %>  
+<hr/>  
+  
+<h3>Login Form</h3> 
+ 
+ <br/>  
+	<form action="noAccess.jsp" method="post">  
+		Email:<input type="text" name="email"/><br/><br/>  
+		Password:<input type="password" name="password"/><br/><br/>  
+		<input type="submit" value="login"/> 
+	</form>  
+	     
      <br>
-    </form>
-
 </body>
 </html>
 
