@@ -13,27 +13,24 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.transaction.UserTransaction;
 
 import entities.Course;
 
 /**
  * Servlet implementation class AMServlet
  */
-@WebServlet("/AMServlet")
+@WebServlet({"/AMServlet"})
 public class AMServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	@PersistenceContext(unitName = "AulaGlobal")
+	@PersistenceContext(unitName = "AulaMaster")
 	private EntityManager em;
-
-	private UserTransaction ut;
     /**
      * Default constructor. 
      */
-    public AMServlet() {
+    //public AMServlet() {
         // TODO Auto-generated constructor stub
-    }
+    //}
    
     public void init() {
     	ServletContext context = getServletContext();
@@ -51,12 +48,12 @@ public class AMServlet extends HttpServlet {
 		out.println("<HEAD><TITLE>AMServlet</TITLE></HEAD>");
 		out.println("<BODY bgcolor=\"#ffff66\">");
 		out.println("<H1><FONT color=\"#666600\">Database: Users</FONT></H1></BR>");
-		out.println("<FORM METHOD=\"POST\" ACTION=\"" + "\">"); 
+		
 		
 		
 
 		//Print the name of all sections
-		Query query = em.createQuery("Select c from Courses c");
+		Query query = em.createQuery("Select c from Course c");
 		List<Course> listCourses = query.getResultList();
 		for (Course c : listCourses) {
 			out.println("<h2> " +c.getName() +"</h2>");
@@ -65,10 +62,10 @@ public class AMServlet extends HttpServlet {
 		
 		
 		
-		out.println("</FORM>");
 		out.println("</BODY></HTML>");
 
 		out.close();
+		
 	}
 
 	/**

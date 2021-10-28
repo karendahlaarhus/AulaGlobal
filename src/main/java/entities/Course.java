@@ -35,8 +35,6 @@ public class Course implements Serializable {
 
 	private String name;
 
-	private int section;
-
 	//bi-directional many-to-many association to Student
 	@ManyToMany(mappedBy="courses")
 	private List<Student> students;
@@ -74,14 +72,6 @@ public class Course implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public int getSection() {
-		return this.section;
-	}
-
-	public void setSection(int section) {
-		this.section = section;
 	}
 
 	public List<Student> getStudents() {
