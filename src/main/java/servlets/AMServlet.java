@@ -19,7 +19,7 @@ import entities.Course;
 /**
  * Servlet implementation class AMServlet
  */
-@WebServlet({"/AMServlet", "*.html"})
+@WebServlet({"/AMServlet"})
 public class AMServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
