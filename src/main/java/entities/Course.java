@@ -11,11 +11,12 @@ import java.util.List;
  */
 @Entity
 @Table(name="Courses")
-@NamedQuery(name="Cours.findAll", query="SELECT c FROM Cours c")
-public class Cours implements Serializable {
+@NamedQuery(name="Course.findAll", query="SELECT c FROM Course c")
+public class Course implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="id_course")
 	private int idCourse;
 
@@ -34,7 +35,7 @@ public class Cours implements Serializable {
 	@ManyToMany(mappedBy="courses")
 	private List<Student> students;
 
-	public Cours() {
+	public Course() {
 	}
 
 	public int getIdCourse() {

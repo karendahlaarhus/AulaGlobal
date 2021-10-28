@@ -17,6 +17,7 @@ public class Student implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private String nie;
 
 	@Temporal(TemporalType.DATE)
@@ -27,7 +28,7 @@ public class Student implements Serializable {
 
 	private String surname;
 
-	//bi-directional many-to-many association to Cours
+	//bi-directional many-to-many association to Course
 	@ManyToMany
 	@JoinTable(
 		name="EnrolledStudent"
@@ -38,7 +39,7 @@ public class Student implements Serializable {
 			@JoinColumn(name="id_course")
 			}
 		)
-	private List<Cours> courses;
+	private List<Course> courses;
 
 	public Student() {
 	}
@@ -75,11 +76,11 @@ public class Student implements Serializable {
 		this.surname = surname;
 	}
 
-	public List<Cours> getCourses() {
+	public List<Course> getCourses() {
 		return this.courses;
 	}
 
-	public void setCourses(List<Cours> courses) {
+	public void setCourses(List<Course> courses) {
 		this.courses = courses;
 	}
 
