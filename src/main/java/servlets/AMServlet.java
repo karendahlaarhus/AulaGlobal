@@ -53,7 +53,7 @@ public class AMServlet extends HttpServlet {
 		
 
 		//Print the name of all sections
-		Query query = em.createQuery("Select c from Courses c");
+		Query query = em.createQuery("Select c from Course c");
 		List<Course> listCourses = query.getResultList();
 		for (Course c : listCourses) {
 			out.println("<h2> " +c.getName() +"</h2>");
