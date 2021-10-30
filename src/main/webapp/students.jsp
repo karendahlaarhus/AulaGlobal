@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-<title>AulaMaster</title>
+<title>Student Administation</title>
 <style>
 .updateForm {
 	display: none;
@@ -81,7 +81,7 @@ request.setAttribute("students", students);%>
 	</c:forEach>
 </table>
 
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(document).ready(
 	    $("#searchInput").on("keyup", function(){
