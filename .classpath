@@ -26,5 +26,7 @@
 			<attribute name="javadoc_location" value="https://jakarta.ee/specifications/platform/8/apidocs"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/Users/solveiglangas/Downloads/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/solveiglangas/Downloads/jstl-standard.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
