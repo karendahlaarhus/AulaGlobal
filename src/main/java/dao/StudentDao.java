@@ -35,7 +35,9 @@ public class StudentDao {
 	
 	public static List<Student> getStudents() throws SQLException, NamingException {
 		Connection con = dbConnection.openConnection();
-		PreparedStatement stm = con.prepareStatement("select * from students");
+		
+		String sql = "SELECT * from Students";
+		PreparedStatement stm = con.prepareStatement(sql);
 		ResultSet rs = stm.executeQuery();
 		
 		
@@ -49,10 +51,18 @@ public class StudentDao {
 		con.close();
 		
 		return students;
+	}
+	
+	public static void deleteStudent(String nie) throws SQLException, NamingException {
+		Connection con = dbConnection.openConnection();
 		
+		String sql =  "DELETE FROM Students WHERE nie = ?";
+		PreparedStatement stm = con.prepareStatement(sql);
+		stm.setString(1, nie);
 		
+		stm.executeUpdate();
 		
-		
+		con.close();
 		
 	}
 }

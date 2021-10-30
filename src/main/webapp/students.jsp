@@ -10,13 +10,23 @@
 <%@page import="java.util.*, beans.*, dao.*"%>   
 <h1>Student Administration</h1> 
 
-<form id="addStudentForm" action="addStudent" method="post">  
+<h3>ADD STUDENT</h3>
+<form id="addStudentForm" action="createStudent" method="post">  
 	NIE:<input type="text" name="nie" required="required"/><br/><br/>  
 	Firstname: <input type="text" name="firstname" required="required"/><br/><br/>  
 	Surname: <input type="text" name="surname" required="required"/><br/><br/>
 	Date of birth: <input type="date" name="birthdate" required="required"/><br/><br/> 	
 	<input type="submit" value="Add Student"/> 
 </form>
+
+<h3>DELETE STUDENT</h3>
+<form id="deleteStudentForm" action="deleteStudent" method="post">
+	Type the NIE of the student you would like to delete:  <br />
+	<input type="text" name="nie" required="required"/>
+	<input type="submit" value="Delete student"/>
+</form>
+
+<h3>List of Students</h3>
 
 <% List<Student> students = StudentDao.getStudents();
 request.setAttribute("students", students);%>
