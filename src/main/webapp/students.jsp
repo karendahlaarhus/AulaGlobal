@@ -48,6 +48,8 @@
 <% List<Student> students = StudentDao.getStudents();
 request.setAttribute("students", students);%>
 
+<input name="searchInput" placeholder="Search..." type="text" id="searchInput"/>
+
 <table>
 	<tr>
 		<th> NIE </th>
@@ -68,7 +70,7 @@ request.setAttribute("students", students);%>
 		</form>
 	</div>
 	<tr>
-		<th> ${student.getNie()} </th>
+		<th class="studentNie"> ${student.getNie()} </th>
 		<th> ${student.getName()} </th>
 		<th> ${student.getSurname()} </th>
 		<th> ${student.getBirthdate()} </th>
@@ -81,6 +83,16 @@ request.setAttribute("students", students);%>
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+$(document).ready(
+	    $("#searchInput").on("keyup", function(){
+	        var searchText = $(this).val().toLowerCase();
+
+	        $(".studentNie").filter(function(){
+	            $(this).toggle($(this).text().toLowerCase().indexOf(searchText) > -1)
+	        })
+	    })
+	)
+
 
 function showUpdateStudentForm(id){
 		$("#"+id).show()
