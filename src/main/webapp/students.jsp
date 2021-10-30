@@ -88,7 +88,7 @@ $(document).ready(
 	        var searchText = $(this).val().toLowerCase();
 
 	        $(".studentNie").filter(function(){
-	            $(this).toggle($(this).text().toLowerCase().indexOf(searchText) > -1)
+	            $(this).parent().toggle($(this).text().toLowerCase().indexOf(searchText) > -1)
 	        })
 	    })
 	)
