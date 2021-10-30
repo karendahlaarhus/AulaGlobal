@@ -43,6 +43,7 @@ public class CreateStudentServlet extends HttpServlet {
 			Date dBirthDate = dateFormater.parse(sBirthDate);
 			Student newStudent = new Student(sNie, sFirstname, sSurname, dBirthDate);
 			StudentDao.createStudent(newStudent);
+			response.sendRedirect(request.getHeader("Referer"));
 		} catch (ParseException | SQLException | NamingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

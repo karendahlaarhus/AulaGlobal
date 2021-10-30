@@ -44,6 +44,8 @@ public class UpdateStudentServlet extends HttpServlet {
 			SimpleDateFormat dateFormater = new SimpleDateFormat("yyyy-MM-dd");
 			Date dBirthDate = dateFormater.parse(sBirthDate);
 			StudentDao.updateStudent(sNie, sFirstname, sSurname, dBirthDate);
+			
+			response.sendRedirect(request.getHeader("Referer"));
 		} catch (ParseException | SQLException | NamingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
