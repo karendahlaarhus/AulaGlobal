@@ -33,9 +33,6 @@ public class CreateStudentServlet extends HttpServlet {
     }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter pw = response.getWriter();
-		;
-		
 		String sNie = request.getParameter("nie");
 		String sFirstname = request.getParameter("firstname");
 		String sSurname = request.getParameter("surname");
@@ -50,8 +47,6 @@ public class CreateStudentServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}		
-		
-		doGet(request, response);
 	}
 
 

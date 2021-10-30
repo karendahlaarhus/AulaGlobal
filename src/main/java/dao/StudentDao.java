@@ -65,4 +65,22 @@ public class StudentDao {
 		con.close();
 		
 	}
+	
+	public static void updateStudent(String nie, String name, String surname, java.util.Date birthdate) throws SQLException, NamingException {
+		Connection con = dbConnection.openConnection();
+		
+		String sql = "UPDATE Students SET name = ?, surname = ?, date_of_birth = ? WHERE nie = ?";
+		PreparedStatement stm = con.prepareStatement(sql);
+		stm.setString(1, name);
+		stm.setString(2, surname);
+		
+		Date sqlBirthdate = new Date(birthdate.getTime());
+		stm.setDate(3, sqlBirthdate);
+		
+		stm.setString(4, nie);
+		
+		stm.executeUpdate();
+		
+		con.close();
+	}
 }
