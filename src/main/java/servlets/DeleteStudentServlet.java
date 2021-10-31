@@ -26,11 +26,12 @@ public class DeleteStudentServlet extends HttpServlet {
 		String nie = request.getParameter("nie");
 		try {
 			StudentDao.deleteStudent(nie);
-			response.sendRedirect(request.getHeader("Referer"));
 		} catch (SQLException | NamingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		response.sendRedirect(request.getHeader("Referer"));
+
 	}
 
 }
