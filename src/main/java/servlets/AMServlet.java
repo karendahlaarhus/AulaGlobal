@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import entities.Course;
+import entities.User;
 
 /**
  * Servlet implementation class AMServlet
@@ -46,17 +46,16 @@ public class AMServlet extends HttpServlet {
 
 		out.println("<HTML>");
 		out.println("<HEAD><TITLE>AMServlet</TITLE></HEAD>");
-		out.println("<BODY bgcolor=\"#ffff66\">");
 		out.println("<H1><FONT color=\"#666600\">Database: Users</FONT></H1></BR>");
 		
 		
 		
 
 		//Print the name of all sections
-		Query query = em.createQuery("Select c from Course c");
-		List<Course> listCourses = query.getResultList();
-		for (Course c : listCourses) {
-			out.println("<h2> " +c.getName() +"</h2>");
+		Query query = em.createQuery("SELECT u FROM User u");
+		List<User> listUsers = query.getResultList();
+		for (User u : listUsers) {
+			out.println("<h2> " +u.getName() +"</h2>");
 		}
 		
 		

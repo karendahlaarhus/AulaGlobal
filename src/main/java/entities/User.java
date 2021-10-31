@@ -1,16 +1,12 @@
 package entities;
 
 import java.io.Serializable;
-import java.math.BigInteger;
-import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -28,8 +24,8 @@ public class User implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int idusers;
 
-	@Column(name="CURRENT_CONNECTIONS")
-	private BigInteger currentConnections;
+	//@Column(name="CURRENT_CONNECTIONS")
+	//private BigInteger currentConnections;
 
 	private String name;
 
@@ -38,14 +34,14 @@ public class User implements Serializable {
 	private String surname;
 
 
-	@Column(name="TOTAL_CONNECTIONS")
-	private BigInteger totalConnections;
+	//@Column(name="TOTAL_CONNECTIONS")
+	//private BigInteger totalConnections;
 
-	private String user;
+	//private String user;
 
 	//bi-directional many-to-one association to UserSession
-	@OneToMany(mappedBy="user")
-	private List<UserSession> userSessions;
+	//@OneToMany(mappedBy="user")
+	//private List<UserSession> userSessions;
 
 	public User() {
 	}
@@ -58,13 +54,13 @@ public class User implements Serializable {
 		this.idusers = idusers;
 	}
 
-	public BigInteger getCurrentConnections() {
-		return this.currentConnections;
-	}
+	//public BigInteger getCurrentConnections() {
+	//	return this.currentConnections;
+	//}
 
-	public void setCurrentConnections(BigInteger currentConnections) {
-		this.currentConnections = currentConnections;
-	}
+	//public void setCurrentConnections(BigInteger currentConnections) {
+	//	this.currentConnections = currentConnections;
+	//}
 
 	public String getName() {
 		return this.name;
@@ -90,42 +86,42 @@ public class User implements Serializable {
 		this.surname = surname;
 	}
 
-	public BigInteger getTotalConnections() {
-		return this.totalConnections;
-	}
+	//public BigInteger getTotalConnections() {
+	//return this.totalConnections;
+	//}
 
-	public void setTotalConnections(BigInteger totalConnections) {
-		this.totalConnections = totalConnections;
-	}
+	//public void setTotalConnections(BigInteger totalConnections) {
+	//	this.totalConnections = totalConnections;
+	//}
 
-	public String getUser() {
-		return this.user;
-	}
+//	public String getUser() {
+//		return this.user;
+//	}
+//
+//	public void setUser(String user) {
+//		this.user = user;
+//	}
 
-	public void setUser(String user) {
-		this.user = user;
-	}
+	//public List<UserSession> getUserSessions() {
+	//	return this.userSessions;
+	//}
 
-	public List<UserSession> getUserSessions() {
-		return this.userSessions;
-	}
+	//public void setUserSessions(List<UserSession> userSessions) {
+	//	this.userSessions = userSessions;
+	//}
 
-	public void setUserSessions(List<UserSession> userSessions) {
-		this.userSessions = userSessions;
-	}
-
-	public UserSession addUserSession(UserSession userSession) {
-		getUserSessions().add(userSession);
-		userSession.setUser(this);
-
-		return userSession;
-	}
-
-	public UserSession removeUserSession(UserSession userSession) {
-		getUserSessions().remove(userSession);
-		userSession.setUser(null);
-
-		return userSession;
-	}
+//	public UserSession addUserSession(UserSession userSession) {
+//		getUserSessions().add(userSession);
+//		userSession.setUser(this);
+//
+//		return userSession;
+//	}
+//
+//	public UserSession removeUserSession(UserSession userSession) {
+//		getUserSessions().remove(userSession);
+//		userSession.setUser(null);
+//
+//		return userSession;
+//	}
 
 }
