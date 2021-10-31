@@ -6,6 +6,8 @@
 </head>
 <body>
 <a href="login.jsp">login</a>  
+<a href="students.jsp">Manage Students</a>
+<a href="courseEnrollment.jsp">Manage course enrollment</a>
 
 <h1>Aula Master</h1>
 

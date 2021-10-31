@@ -46,7 +46,8 @@ public class CreateStudentServlet extends HttpServlet {
 		} catch (ParseException | SQLException | NamingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}		
+		}
+		response.sendRedirect(request.getHeader("Referer"));
 	}
 
 

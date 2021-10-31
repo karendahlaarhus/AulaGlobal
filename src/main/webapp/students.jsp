@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-<title>AulaMaster</title>
+<title>Student Administation</title>
 <style>
 .updateForm {
 	display: none;
@@ -70,18 +70,18 @@ request.setAttribute("students", students);%>
 		</form>
 	</div>
 	<tr>
-		<th class="studentNie"> ${student.getNie()} </th>
-		<th> ${student.getName()} </th>
-		<th> ${student.getSurname()} </th>
-		<th> ${student.getBirthdate()} </th>
-		<th>
+		<td class="studentNie"> ${student.getNie()} </td>
+		<td> ${student.getName()} </td>
+		<td> ${student.getSurname()} </td>
+		<td> ${student.getBirthdate()} </td>
+		<td>
 			<button onclick="showUpdateStudentForm('updateStudentForm${student.getNie()}')" value="Update Student">Update Student</button><br/>
-		</th>
+		</td>
 	</tr>
 	</c:forEach>
 </table>
 
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(document).ready(
 	    $("#searchInput").on("keyup", function(){
