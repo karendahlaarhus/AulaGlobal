@@ -33,7 +33,14 @@
 <% List<Course> courses = CourseDao.getCourses();
 request.setAttribute("courses", courses);%>
 
-<input name="searchInput" placeholder="Search..." type="text" id="searchInput"/>
+<form id="searchForm" onSubmit="searchAndFilter()">
+<input name="searchInput" placeholder="Search..." type="text" id="searchInput"/><br>
+<b>School:</b> <label><input type = "checkbox" value= "Leganés">Leganés</label>
+<label></label><input type = "checkbox" value="Getafe">Getafe</label> <br>
+<b>Study:</b> <label><input type = "checkbox" value = "Computer Science and Engineering">Computer Science and Engineering</label>
+<label><input type = "checkbox" value = "Buisness Administration">Buisness Administration</label><br>
+<input type="submit" value="Search">
+</form>
 
 <table>
 	<tr>
@@ -93,11 +100,11 @@ request.setAttribute("courses", courses);%>
 	</div>
 	</td>
 	
-	<tr>
+	<tr class=coursesTable>
 		<td class="courseId"> ${course.getId()} </td>
 		<td> ${course.getName()} </td>
-		<td> ${course.getSchool()} </td>
-		<td> ${course.getAcademicCourse()} </td>
+		<td class="school">${course.getSchool()}</td>
+		<td class="study">${course.getAcademicCourse()}</td>
 		<td> <button onclick="showModule('description${course.getId()}')">Read Description</button> </td>
 		<td> <button onclick="showModule('students${course.getId()}')">Manage Enrolled Students</button> </td>
 	</tr>
@@ -107,15 +114,39 @@ request.setAttribute("courses", courses);%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 
-$(document).ready(
-	    $("#searchInput").on("keyup", function(){
-	        var searchText = $(this).val().toLowerCase();
+$("#searchForm").submit(function(e) {
+    e.preventDefault();
+});
 
-	        $(".courseId").filter(function(){
-	            $(this).parent().toggle($(this).text().toLowerCase().indexOf(searchText) > -1)
-	        })
-	    })
-	)
+function searchAndFilter(){
+	
+	var checked = $("input:checkbox:checked").map(function () {
+        return $(this).val()
+    }).get()
+	
+    if (checked.length != 0){
+	    $(".coursesTable").hide();
+	    var schools = $(".school").filter(function () {
+	        var school = $(this).text(),
+	            index = $.inArray(school, checked);
+	        return index >= 0
+	    }).parent().show();
+	    var study = $(".study").filter(function () {
+	        var study = $(this).text(),
+	            index = $.inArray(study, checked);
+	        return index >= 0
+	    }).parent().show();
+    }
+    
+    if ($("#searchInput").val().length != 0){
+    	var searchText = $("#searchInput").val().toLowerCase();
+    	
+        $(".courseId:visible").filter(function(){
+            $(this).parent().toggle($(this).text().toLowerCase().indexOf(searchText) > -1)
+        })
+    }
+}
+
 
 function showModule(id){
 		$("#"+id).show()
