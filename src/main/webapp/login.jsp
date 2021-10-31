@@ -6,10 +6,16 @@
 </head>
 <body>
 
+<<<<<<< HEAD
  
 <hr/>  
   
 <h3>You are logged in</h3> 
+=======
+    <%@ include file="index.jsp" %>  
+<hr/>    
+<h3>Login Form</h3> 
+>>>>>>> main
  
  <br/>  
 	

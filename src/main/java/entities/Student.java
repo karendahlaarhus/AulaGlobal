@@ -40,8 +40,15 @@ public class Student implements Serializable {
 			}
 		)
 	private List<Course> courses;
-
+	
 	public Student() {
+	}
+
+	public Student(String nie, String name, String surname, Date birthDate) {
+		this.setNie(nie);
+		this.setName(name);
+		this.setSurname(surname);
+		this.setDateOfBirth(birthDate);
 	}
 
 	public String getNie() {
