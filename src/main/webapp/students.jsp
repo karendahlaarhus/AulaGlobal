@@ -4,6 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
+
 <title>Student Administation</title>
 <style>
 .updateForm {
@@ -24,7 +25,10 @@
 
 </head>
 <body>
-<%@page import="java.util.*, beans.*, dao.*"%>   
+<%@page import="java.util.*, beans.*, dao.*"%>  
+<a href="index.jsp">Home</a>
+<a href="login.jsp">login</a>  
+<a href="courseEnrollment.jsp">Manage course enrollment</a> 
 <h1>Student Administration</h1> 
 
 <h3>ADD STUDENT</h3>
@@ -34,13 +38,6 @@
 	Surname: <input type="text" name="surname" required="required"/><br/><br/>
 	Date of birth: <input type="date" name="birthdate" required="required"/><br/><br/> 	
 	<input type="submit" value="Add Student"/> 
-</form>
-
-<h3>DELETE STUDENT</h3>
-<form id="deleteStudentForm" action="deleteStudent" method="post">
-	Type the NIE of the student you would like to delete:  <br />
-	<input type="text" name="nie" required="required"/>
-	<input type="submit" value="Delete Student"/>
 </form>
 
 <h3>List of Students</h3>
@@ -76,6 +73,12 @@ request.setAttribute("students", students);%>
 		<td> ${student.getBirthdate()} </td>
 		<td>
 			<button onclick="showUpdateStudentForm('updateStudentForm${student.getNie()}')" value="Update Student">Update Student</button><br/>
+		</td>
+		<td>
+		<form id="deleteStudentForm" action="deleteStudent" method="post">
+		<input type="hidden" name="nie" value="${student.getNie()}"/>
+		<input type="submit" value="Delete Student"/>
+</form>
 		</td>
 	</tr>
 	</c:forEach>

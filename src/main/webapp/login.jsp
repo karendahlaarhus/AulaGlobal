@@ -7,8 +7,7 @@
 <body>
 
     <%@ include file="index.jsp" %>  
-<hr/>  
-  
+<hr/>    
 <h3>Login Form</h3> 
  
  <br/>  

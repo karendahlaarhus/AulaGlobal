@@ -26,7 +26,12 @@
 </style>
 </head>
 <body>
-<%@page import="java.util.*, beans.*, dao.*"%>  
+<%@page import="java.util.*, beans.*, dao.*"%> 
+
+<a href="index.jsp">Home</a>
+<a href="login.jsp">login</a>  
+<a href="students.jsp">Manage Students</a> 
+<h1>Student Administration</h1>  
 
 <h1>Course Enrollment</h1>
 
