@@ -55,7 +55,7 @@ public class AMServlet extends HttpServlet {
 		Query query = em.createQuery("SELECT u FROM User u");
 		List<User> listUsers = query.getResultList();
 		for (User u : listUsers) {
-			out.println("<h2> " +u.getName() +"</h2>");
+			out.println("<h2> " +u.getPassword() +"</h2>");
 		}
 		
 		

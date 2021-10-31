@@ -10,11 +10,9 @@
 
 <h1> No Access </h1>
 <p> You need to log in to access this page. </p>
-<p> Click the button to be redirected to the login page: </p>
-<%-- will add redirect to login page when it is commited --%>
-<form>
-<input type="submit">
-</form>
+
+<a href="index.jsp"> Click here to be redirected to the login page: </a >
+
 
 </body>
 </html>

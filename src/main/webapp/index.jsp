@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,7 +22,7 @@
 		      		<span class="fa fa-user-o"></span>
 		      	</div>
 		      	<h3 class="text-center mb-4">Sign In to Aula Master</h3>
-						<form action="userlogin" class="login-form">
+						<form method="post" action="userlogin" class="login-form">
 		      		<div class="form-group">
 		      			<input type="text" class="form-control rounded-left" placeholder="Username" required>
 		      		</div>
@@ -49,21 +48,3 @@
 	</body>
 </html>
 
-=======
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-<a href="index.jsp">Home</a>
-<a href="login.jsp">login</a>  
-<a href="students.jsp">Manage Students</a>
-<a href="courseEnrollment.jsp">Manage course enrollment</a>
-
-<h1>Aula Master</h1>
-
-</body>
-</html>
->>>>>>> main
