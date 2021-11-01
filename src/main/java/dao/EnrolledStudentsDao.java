@@ -15,6 +15,15 @@ import beans.dbConnection;
 
 public class EnrolledStudentsDao {
 	
+	/**
+	 * Joins EnrolledStudents and Students Table to find all students enrolled in
+	 * a course.
+	 * @param courseId
+	 * @return a list of all students enrolled in a course
+	 * @throws SQLException
+	 * @throws NamingException
+	 */
+	
 	public static List<Student> getStudentsInCourse(int courseId) throws SQLException, NamingException {
 		Connection con = dbConnection.openConnection();
 		
@@ -36,6 +45,13 @@ public class EnrolledStudentsDao {
 		return students;
 	}
 	
+	/**
+	 * Enroll a student in a course.
+	 * @param es: enrolled student (consits of the id of the course and the nie of the student")
+	 * @throws SQLException
+	 * @throws NamingException
+	 */
+	
 	public static void enrollStudent(EnrolledStudent es) throws SQLException, NamingException {
 		Connection con = dbConnection.openConnection();
 		
@@ -48,6 +64,13 @@ public class EnrolledStudentsDao {
 		con.close();
 		
 	}
+	
+	/**
+	 * Removes a student from a course by deleting the row in EnrolledStudent in the database
+	 * @param es
+	 * @throws SQLException
+	 * @throws NamingException
+	 */
 	
 	public static void removeStudent(EnrolledStudent es) throws SQLException, NamingException {
 		Connection con = dbConnection.openConnection();

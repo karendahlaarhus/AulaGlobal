@@ -30,6 +30,7 @@ public class RemoveStudentSerlvet extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * Delets Student. Gets parameters from removeStudentToClassForm in courseEnrollment.jsp
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String sNie = request.getParameter("nie");

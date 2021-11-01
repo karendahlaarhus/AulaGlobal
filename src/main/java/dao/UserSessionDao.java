@@ -15,6 +15,14 @@ import beans.dbConnection;
 
 public class UserSessionDao {
 	
+	/**
+	 * Creates a UserSession in the database. 
+	 * Happens when a user logs in.
+	 * @param us
+	 * @throws SQLException
+	 * @throws NamingException
+	 */
+	
 	public static void createUserSession(UserSession us) throws SQLException, NamingException {
 		Connection con = dbConnection.openConnection();
 		
@@ -32,6 +40,12 @@ public class UserSessionDao {
 		con.close();
 	}
 	
+	/**
+	 * Updates a usersession by setting endtime. Happens when a user logs out
+	 * @param us
+	 * @throws SQLException
+	 * @throws NamingException
+	 */
 	public static void endUserSession(UserSession us) throws SQLException, NamingException {
 		Connection con = dbConnection.openConnection();
 		

@@ -32,6 +32,10 @@ public class CreateStudentServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
+    
+    /**
+     * Creates a student. Gets Parameters from createStudentForm in students.jsp
+     */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String sNie = request.getParameter("nie");
 		String sFirstname = request.getParameter("firstname");

@@ -15,6 +15,13 @@ import beans.dbConnection;
 public class CourseDao {
 	
 	
+	/**
+	 * Finds all courses in the database
+	 * @return a list with the courses
+	 * @throws SQLException
+	 * @throws NamingException
+	 */
+	
 	public static List<Course> getCourses() throws SQLException, NamingException {
 		Connection con = dbConnection.openConnection();
 		

@@ -33,6 +33,7 @@ public class UpdateStudentServlet extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * Updates student, gets parameters from updateForm in students.jsp
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String sNie = request.getParameter("nie");
