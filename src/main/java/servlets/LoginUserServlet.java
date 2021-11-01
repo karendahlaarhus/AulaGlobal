@@ -1,7 +1,9 @@
 package servlets;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
+import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import beans.User;
-import dao.LoginAccessDao;
+import dao.LoginDao;
+import dao.UserDao;
+
 
 /**
  * Servlet implementation class LoginServlet
@@ -27,22 +31,26 @@ public class LoginUserServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String name = request.getParameter("name");
+		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		
-		User user = new User(name, password);
+		User user = new User(username, password);
+		HttpSession session = request.getSession();
+		session.setAttribute("username", user.getUserId());
 		
-	
-		boolean loggedin = LoginAccessDao.validateLogin(user);
-		
-		if(loggedin) {
-			HttpSession session = request.getSession();
-			session.setAttribute("name", user.getName());
-			session.setAttribute("surname", user.getSurname());
-			request.getRequestDispatcher("login.jsp").forward(request, response);
-		}else {
-			request.getRequestDispatcher("noAccess.jsp").forward(request, response);
+		boolean loggedin;
+		try {
+			loggedin = LoginDao.validateLogin(user);
+			if(loggedin) {
+				request.getRequestDispatcher("students.jsp").forward(request, response);
+			}else {
+				UserDao.createUser(user);
+				request.getRequestDispatcher("newUser.jsp").forward(request, response);
+			}} catch (SQLException | NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		
 	
 	}	
     

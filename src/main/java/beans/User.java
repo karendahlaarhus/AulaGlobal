@@ -2,22 +2,28 @@ package beans;
 
 public class User {
 	
-	private int userId;
+	private String userId;
 	private String password;
 
 	private String name;
 	private String surname;
 	
-	public User(String name, String password) {
-		this.name = name;
+	public User(String userId, String password) {
+		this.userId = userId;
 		this.password = password;
 	}
+	
+	public User(String userId, String name, String surname) {
+		this.userId = userId;
+		this.name = name;
+		this.surname = surname;
+	}
 
-	public int getUserId() {
+	public String getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 
