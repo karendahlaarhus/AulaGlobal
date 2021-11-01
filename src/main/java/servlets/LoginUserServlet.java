@@ -7,7 +7,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import beans.User;
 import dao.LoginAccessDao;
@@ -27,28 +26,24 @@ public class LoginUserServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String name = request.getParameter("name");
-		String password = request.getParameter("password");
+    	boolean loggedin = false;
+    	String sName = request.getParameter("name");
+		String sPassword = request.getParameter("password");
 		
-		User user = new User(name, password);
+		User newUser = new User(sName, sPassword);
 		
-	
-		boolean loggedin = LoginAccessDao.validateLogin(user);
+		loggedin = LoginAccessDao.validateLogin(newUser);
 		
 		if(loggedin) {
-			HttpSession session = request.getSession();
-			session.setAttribute("name", user.getName());
-			session.setAttribute("surname", user.getSurname());
 			request.getRequestDispatcher("login.jsp").forward(request, response);
 		}else {
 			request.getRequestDispatcher("noAccess.jsp").forward(request, response);
 		}
-	
+		
 	}	
     
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
-		doPost(request, response);
-	}
-    
-    
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    	doPost(request, response);
+    }
+
 }
