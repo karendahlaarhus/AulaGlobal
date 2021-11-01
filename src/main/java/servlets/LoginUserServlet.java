@@ -41,20 +41,24 @@ public class LoginUserServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.setAttribute("username", user.getUserId());
 		
-		boolean loggedin;
 		try {
-			loggedin = LoginDao.validateLogin(user);
+			boolean oldUser = LoginDao.validateLogin(user);
+			String redirect = "";
+			
+			if(oldUser) {
+				redirect = "waem8906.jsp";
+			}else {
+				UserDao.createUser(user);
+				redirect = "newUser.jsp";
+			}
+			
 			UserSession userSession = new UserSession(user.getUserId());
 			UserSessionDao.createUserSession(userSession);
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			session.setAttribute("start", sdf.format(userSession.getStartDateTime()));
-			
-			if(loggedin) {
-				request.getRequestDispatcher("waem8906.jsp").forward(request, response);
-			}else {
-				UserDao.createUser(user);
-				request.getRequestDispatcher("newUser.jsp").forward(request, response);
-			}} catch (SQLException | NamingException e) {
+			request.getRequestDispatcher(redirect).forward(request, response);
+
+			} catch (SQLException | NamingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

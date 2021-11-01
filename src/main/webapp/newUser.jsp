@@ -12,9 +12,6 @@
 <p> You are a new user! Please add your name: </p>
  <% Object username = request.getAttribute("username"); %>
 
-<p> ${username} </p>
-
-
 <form id="updateUserForm" action="updateUser" method="post">
 	<input type="hidden" name="username" value="${username}">  
 	Firstname: <input type="text" name="name" required="required"/><br/><br/>  

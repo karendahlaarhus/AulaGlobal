@@ -11,8 +11,10 @@
 <body>
 
 <h1> Aula Master </h1>
+<a href="waem8906.jsp">Home</a>
 <a href="students.jsp">Student Administration</a>  
-<a href="courseEnrollment.jsp">Manage Course Enrollment</a> 
+<a href="courseEnrollment.jsp">Manage Course Enrollment</a>
+<a href="index.jsp">Login</a> 
 
 <c:if test="${sessionScope.username != null }"> 
 <form id="logoutForm" action="userLogout" method="post">
