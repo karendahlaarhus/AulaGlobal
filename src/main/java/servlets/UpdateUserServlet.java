@@ -37,7 +37,7 @@ public class UpdateUserServlet extends HttpServlet {
 		
 		try {
 			UserDao.updateUser(sUsername, sName, sSurname);
-			response.sendRedirect("students.jsp");
+			response.sendRedirect("waem8906.jsp");
 		} catch (SQLException | NamingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

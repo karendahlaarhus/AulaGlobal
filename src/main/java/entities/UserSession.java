@@ -3,7 +3,6 @@ package entities;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Date;
-import java.sql.Timestamp;
 
 
 /**
@@ -19,12 +18,9 @@ public class UserSession implements Serializable {
 	@EmbeddedId
 	private UserSessionPK id;
 
-	@Temporal(TemporalType.DATE)
-	@Column(name="end_date")
-	private Date endDate;
-
-	@Column(name="end_time")
-	private Timestamp endTime;
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="end_date_time")
+	private Date endDateTime;
 
 	//bi-directional many-to-one association to User
 	@ManyToOne
@@ -42,20 +38,12 @@ public class UserSession implements Serializable {
 		this.id = id;
 	}
 
-	public Date getEndDate() {
-		return this.endDate;
+	public Date getEndDateTime() {
+		return this.endDateTime;
 	}
 
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
-
-	public Timestamp getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Timestamp endTime) {
-		this.endTime = endTime;
+	public void setEndDateTime(Date endDateTime) {
+		this.endDateTime = endDateTime;
 	}
 
 	public User getUser() {

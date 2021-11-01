@@ -10,9 +10,10 @@ import javax.sql.DataSource;
 
 public class dbConnection {
 	
+	//TODO: CHANGE USERNAME AND PASSWORD TO FIT YOUR CREDENTIALS
 	static final String DB_URL = "jdbc:mysql://localhost:3306/BD89_06_aulamaster";
-	static final String USER = "admin";
-	static final String PASSWORD = "Klinkekule3";
+	static final String USER = "USERNAME";
+	static final String PASSWORD = "PASSWORD";
 	static final String DATA_SOURCE = "BD89_06_aulamaster";
 	
 	public static Connection openConnection() throws SQLException, NamingException{

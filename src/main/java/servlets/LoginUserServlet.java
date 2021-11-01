@@ -2,6 +2,7 @@ package servlets;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 
 import javax.naming.NamingException;
 import javax.servlet.ServletException;
@@ -12,8 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import beans.User;
+import beans.UserSession;
 import dao.LoginDao;
 import dao.UserDao;
+import dao.UserSessionDao;
 
 
 /**
@@ -38,15 +41,24 @@ public class LoginUserServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.setAttribute("username", user.getUserId());
 		
-		boolean loggedin;
 		try {
-			loggedin = LoginDao.validateLogin(user);
-			if(loggedin) {
-				request.getRequestDispatcher("students.jsp").forward(request, response);
+			boolean oldUser = LoginDao.validateLogin(user);
+			String redirect = "";
+			
+			if(oldUser) {
+				redirect = "waem8906.jsp";
 			}else {
 				UserDao.createUser(user);
-				request.getRequestDispatcher("newUser.jsp").forward(request, response);
-			}} catch (SQLException | NamingException e) {
+				redirect = "newUser.jsp";
+			}
+			
+			UserSession userSession = new UserSession(user.getUserId());
+			UserSessionDao.createUserSession(userSession);
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			session.setAttribute("start", sdf.format(userSession.getStartDateTime()));
+			request.getRequestDispatcher(redirect).forward(request, response);
+
+			} catch (SQLException | NamingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

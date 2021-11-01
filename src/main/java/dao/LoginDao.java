@@ -21,11 +21,11 @@ public class LoginDao {
 		stm.setString(2, user.getPassword());
 		
 		ResultSet rs = stm.executeQuery();
-		boolean loginstatus = rs.next();
+		boolean oldUser = rs.next();
 		
 		con.close();
 		
-		return loginstatus;
+		return oldUser;
 		
 	
   }
