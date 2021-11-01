@@ -22,7 +22,7 @@
 		      		<span class="fa fa-user-o"></span>
 		      	</div>
 		      	<h3 class="text-center mb-4">Sign In to Aula Master</h3>
-						<form method="post" action="userlogin" class="login-form">
+						<form method="post" action="userLogin" class="login-form">
 		      		<div class="form-group">
 		      			<input name="username" type="text" class="form-control rounded-left" placeholder="Username" required>
 		      		</div>

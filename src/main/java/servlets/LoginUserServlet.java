@@ -19,7 +19,7 @@ import dao.UserDao;
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet("/userlogin")
+@WebServlet("/userLogin")
 public class LoginUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -31,10 +31,10 @@ public class LoginUserServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
+		String sUsername = request.getParameter("username");
+		String sPassword = request.getParameter("password");
 		
-		User user = new User(username, password);
+		User user = new User(sUsername, sPassword);
 		HttpSession session = request.getSession();
 		session.setAttribute("username", user.getUserId());
 		
