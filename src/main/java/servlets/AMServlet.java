@@ -49,14 +49,19 @@ public class AMServlet extends HttpServlet {
 		out.println("<H1><FONT color=\"#666600\">Database: Users</FONT></H1></BR>");
 		
 		
-		
+		//String name = "Admin";
+		//String password = "password123";
 
 		//Print the name of all sections
-		Query query = em.createQuery("SELECT u FROM User u");
-		List<User> listUsers = query.getResultList();
-		for (User u : listUsers) {
-			out.println("<h2> " +u.getPassword() +"</h2>");
+		//Query query = em.createQuery("SELECT u FROM User u");
+		Query query = em.createQuery("SELECT u FROM User u WHERE u.name = 'Admin' AND u.password = 'password123'"); // AND u.password = password123", Integer.class);
+		List<User> userlist = query.getResultList();
+		
+		for(User s : userlist) {
+			out.println("<h2> " + s.getIdusers() +"</h2>");
 		}
+		
+		
 		
 		
 		

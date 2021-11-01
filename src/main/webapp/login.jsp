@@ -5,8 +5,6 @@
 <title>AulaMaster</title>
 </head>
 <body>
-
-<<<<<<< HEAD
  
 <hr/>  
   
@@ -19,6 +17,8 @@
 	
 	     
      <br>
+<hr/>    
+
 </body>
 </html>
 

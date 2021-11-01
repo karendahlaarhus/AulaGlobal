@@ -50,13 +50,5 @@ public class LoginUserServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-	
 	}	
-    
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
-		doPost(request, response);
-	}
-    
-    
 }
