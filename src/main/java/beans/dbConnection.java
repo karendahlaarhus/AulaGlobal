@@ -16,6 +16,15 @@ public class dbConnection {
 	static final String PASSWORD = "PASSWORD";
 	static final String DATA_SOURCE = "BD89_06_aulamaster";
 	
+	/**
+	 * This function is used to connect with the database.
+	 * IMPORTANT!! that you remember to change username and password to fit your
+	 * credentials
+	 * @return a connection to the database
+	 * @throws SQLException
+	 * @throws NamingException
+	 */
+	
 	public static Connection openConnection() throws SQLException, NamingException{
 		System.out.print("openConnection");
 		Context ctx = new InitialContext();

@@ -21,6 +21,7 @@ public class DeleteStudentServlet extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doDelete(HttpServletRequest, HttpServletResponse)
+	 * Delets student. Get parameters fromd eleteStudentForm in students.jsp
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nie = request.getParameter("nie");

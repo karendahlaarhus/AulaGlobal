@@ -33,6 +33,13 @@ public class LoginUserServlet extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    
+    /**
+     * Logs in user by setting session attribute and then creating a usersession.
+     * Then the the time of the user session start is also set as an attribute
+     * Redirects an exsitis user to the home page and a new user to a page to
+     * set their name and surname
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String sUsername = request.getParameter("username");
 		String sPassword = request.getParameter("password");

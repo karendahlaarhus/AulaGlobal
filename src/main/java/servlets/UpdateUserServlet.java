@@ -29,6 +29,9 @@ public class UpdateUserServlet extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * Updates a user by setting their name and surname. Username and password is not able to
+	 * be updated.
+	 * Gets parameters from updateUserForm in newUser.jsp
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String sUsername = request.getParameter("username");

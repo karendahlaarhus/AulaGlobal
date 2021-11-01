@@ -30,6 +30,7 @@ public class EnrollStudentServlet extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * Enrolls student. Gets parameters from addStudentToClassForm in courseEnrollment.jsp
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String sNie = request.getParameter("nie");

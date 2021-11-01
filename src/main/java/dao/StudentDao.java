@@ -16,6 +16,13 @@ import beans.Student;
 
 public class StudentDao {
 	
+	/**
+	 * Creates a student in the Students table in the database
+	 * @param student
+	 * @throws SQLException
+	 * @throws NamingException
+	 */
+	
 	public static void createStudent(Student student) throws SQLException, NamingException {		
 		Connection con = dbConnection.openConnection();
 		
@@ -32,6 +39,14 @@ public class StudentDao {
 		
 		con.close();
 	}
+	
+	
+	/**
+	 * Get a list of all students in the database
+	 * @return a list of all students
+	 * @throws SQLException
+	 * @throws NamingException
+	 */
 	
 	public static List<Student> getStudents() throws SQLException, NamingException {
 		Connection con = dbConnection.openConnection();
@@ -53,6 +68,12 @@ public class StudentDao {
 		return students;
 	}
 	
+	/**
+	 * Delets a student from the database by using their NIE
+	 * @param nie: uniqe ID
+	 * @throws SQLException
+	 * @throws NamingException
+	 */
 	public static void deleteStudent(String nie) throws SQLException, NamingException {
 		Connection con = dbConnection.openConnection();
 		
@@ -66,6 +87,15 @@ public class StudentDao {
 		
 	}
 	
+	/**
+	 * Updates a student. All values are updated eventhough they might not be different
+	 * @param nie
+	 * @param name
+	 * @param surname
+	 * @param birthdate
+	 * @throws SQLException
+	 * @throws NamingException
+	 */
 	public static void updateStudent(String nie, String name, String surname, java.util.Date birthdate) throws SQLException, NamingException {
 		Connection con = dbConnection.openConnection();
 		

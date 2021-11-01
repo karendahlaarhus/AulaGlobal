@@ -11,6 +11,14 @@ import beans.dbConnection;
 
 public class UserDao {
 	
+	/**
+	 * Creates a user (this is not a student)
+	 * Does not set name and surname as this is allowed by the user later
+	 * @param user
+	 * @throws SQLException
+	 * @throws NamingException
+	 */
+	
 	public static void createUser(User user) throws SQLException, NamingException {
 		Connection con = dbConnection.openConnection();
 		
@@ -25,6 +33,14 @@ public class UserDao {
 		
 		}
 	
+	/**
+	 * Updates the user by setting name and surname
+	 * @param userId
+	 * @param name
+	 * @param surname
+	 * @throws SQLException
+	 * @throws NamingException
+	 */
 	public static void updateUser(String userId, String name, String surname) throws SQLException, NamingException {
 		Connection con = dbConnection.openConnection();
 		

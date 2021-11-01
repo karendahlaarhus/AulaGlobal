@@ -34,6 +34,8 @@ public class LogoutUserServlet extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * Logs out a user by deliting the session attribute "username" and then updates
+	 * the user session created to the user by adding the end time of the session
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
