@@ -2,6 +2,7 @@ package servlets;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 
 import javax.naming.NamingException;
 import javax.servlet.ServletException;
@@ -12,8 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import beans.User;
+import beans.UserSession;
 import dao.LoginDao;
 import dao.UserDao;
+import dao.UserSessionDao;
 
 
 /**
@@ -41,8 +44,13 @@ public class LoginUserServlet extends HttpServlet {
 		boolean loggedin;
 		try {
 			loggedin = LoginDao.validateLogin(user);
+			UserSession userSession = new UserSession(user.getUserId());
+			UserSessionDao.createUserSession(userSession);
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			session.setAttribute("start", sdf.format(userSession.getStartDateTime()));
+			
 			if(loggedin) {
-				request.getRequestDispatcher("students.jsp").forward(request, response);
+				request.getRequestDispatcher("waem8906.jsp").forward(request, response);
 			}else {
 				UserDao.createUser(user);
 				request.getRequestDispatcher("newUser.jsp").forward(request, response);

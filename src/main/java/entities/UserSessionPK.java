@@ -13,35 +13,25 @@ public class UserSessionPK implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Column(name="id_user", insertable=false, updatable=false)
-	private int idUser;
-
-	@Temporal(TemporalType.DATE)
-	@Column(name="start_date")
-	private java.util.Date startDate;
+	private String idUser;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="start_time")
-	private java.util.Date startTime;
+	@Column(name="start_date_time")
+	private java.util.Date startDateTime;
 
 	public UserSessionPK() {
 	}
-	public int getIdUser() {
+	public String getIdUser() {
 		return this.idUser;
 	}
-	public void setIdUser(int idUser) {
+	public void setIdUser(String idUser) {
 		this.idUser = idUser;
 	}
-	public java.util.Date getStartDate() {
-		return this.startDate;
+	public java.util.Date getStartDateTime() {
+		return this.startDateTime;
 	}
-	public void setStartDate(java.util.Date startDate) {
-		this.startDate = startDate;
-	}
-	public java.util.Date getStartTime() {
-		return this.startTime;
-	}
-	public void setStartTime(java.util.Date startTime) {
-		this.startTime = startTime;
+	public void setStartDateTime(java.util.Date startDateTime) {
+		this.startDateTime = startDateTime;
 	}
 
 	public boolean equals(Object other) {
@@ -53,17 +43,15 @@ public class UserSessionPK implements Serializable {
 		}
 		UserSessionPK castOther = (UserSessionPK)other;
 		return 
-			(this.idUser == castOther.idUser)
-			&& this.startDate.equals(castOther.startDate)
-			&& this.startTime.equals(castOther.startTime);
+			this.idUser.equals(castOther.idUser)
+			&& this.startDateTime.equals(castOther.startDateTime);
 	}
 
 	public int hashCode() {
 		final int prime = 31;
 		int hash = 17;
-		hash = hash * prime + this.idUser;
-		hash = hash * prime + this.startDate.hashCode();
-		hash = hash * prime + this.startTime.hashCode();
+		hash = hash * prime + this.idUser.hashCode();
+		hash = hash * prime + this.startDateTime.hashCode();
 		
 		return hash;
 	}
