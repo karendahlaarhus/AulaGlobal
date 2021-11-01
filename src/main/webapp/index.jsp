@@ -1,16 +1,50 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-<a href="index.jsp">Home</a>
-<a href="login.jsp">login</a>  
-<a href="students.jsp">Manage Students</a>
-<a href="courseEnrollment.jsp">Manage course enrollment</a>
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Login 01</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<h1>Aula Master</h1>
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 
-</body>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="resources/css/style.css">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-7 col-lg-5">
+					<div class="login-wrap p-4 p-md-5">
+		      	<div class="icon d-flex align-items-center justify-content-center">
+		      		<span class="fa fa-user-o"></span>
+		      	</div>
+		      	<h3 class="text-center mb-4">Sign In to Aula Master</h3>
+						<form method="post" action="userLogin" class="login-form">
+		      		<div class="form-group">
+		      			<input name="username" type="text" class="form-control rounded-left" placeholder="Username" required>
+		      		</div>
+	            <div class="form-group d-flex">
+	              <input name="password" type="password" class="form-control rounded-left" placeholder="Password" required>
+	            </div>
+	            <div class="form-group">
+	            	<button type="submit" class="form-control btn btn-primary rounded submit px-3">Login</button>
+	            </div>
+	            
+	          </form>
+	        </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/popper.js"></script>
+  <script src="resources/js/bootstrap.min.js"></script>
+  <script src="resources/js/main.js"></script>
+
+	</body>
 </html>
+

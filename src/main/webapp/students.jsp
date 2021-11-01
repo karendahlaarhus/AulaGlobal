@@ -26,11 +26,8 @@
 </head>
 <body>
 <%@page import="java.util.*, beans.*, dao.*"%>  
-<a href="index.jsp">Home</a>
-<a href="login.jsp">login</a>  
-<a href="courseEnrollment.jsp">Manage course enrollment</a> 
-<h1>Student Administration</h1> 
-
+<%@ include file="navbar.jsp" %>
+  
 <h3>ADD STUDENT</h3>
 <form id="addStudentForm" action="createStudent" method="post">  
 	NIE:<input type="text" name="nie" required="required"/><br/><br/>  
